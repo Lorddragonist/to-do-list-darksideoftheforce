@@ -1,11 +1,11 @@
-function TodoItem() {
-    return (
-      <li>
-        <span>V</span>
-        <p>Llorar a la llorería</p>
-        <span></span>
-      </li>
-    );
-  }
+function TodoItem(props) {
+  return (
+    <li>
+      <span>V</span>
+      <p> {props.text} </p>
+      <span>X</span>
+    </li>
+  );
+}
 
-  export { TodoItem };
+export { TodoItem };
