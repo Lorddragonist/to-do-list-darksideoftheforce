@@ -23,10 +23,8 @@ const defaultTodos = [
 ];
 
 function App() {
-	const [todos, setTodos] =
-		React.useState(defaultTodos);
-	const [searchValue, setSearchValue] =
-		React.useState('');
+	const [todos, setTodos] = React.useState(defaultTodos);
+	const [searchValue, setSearchValue] = React.useState('');
 
 	const completedTodos = todos.filter(
 		(todo) => !!todo.completed
@@ -59,10 +57,7 @@ function App() {
 
 	return (
 		<>
-			<TodoCounter
-				completed={completedTodos}
-				total={totalTodos}
-			/>
+			<TodoCounter completed={completedTodos} total={totalTodos} />
 
 			<TodoSearch
 				searchValue={searchValue}
@@ -75,9 +70,7 @@ function App() {
 						key={todo.text}
 						text={todo.text}
 						completed={todo.completed}
-						onComplete={() =>
-							completeTodo(todo.text)
-						}
+						onComplete={() => completeTodo(todo.text)}
 						onDelete={() => deleteTodo(todo.text)}
 					/>
 				))}
