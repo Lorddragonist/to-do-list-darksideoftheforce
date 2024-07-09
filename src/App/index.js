@@ -3,7 +3,13 @@ import { useLocalStorage } from './useLocaleStorage';
 import { AppUI } from './AppUI';
 
 function App() {
-	const [todos, saveTodos] = useLocalStorage('TODOS_V1', []);
+	const {
+		item: todos,
+		saveItem: saveTodos,
+		loading,
+		error,
+	} = useLocalStorage('TODOS_V1', []);
+
 	const [searchValue, setSearchValue] = React.useState('');
 
 	const completedTodos = todos.filter(
@@ -37,6 +43,8 @@ function App() {
 
 	return (
 		<AppUI
+			loading={loading}
+			error={error}
 			completedTodos={completedTodos}
 			totalTodos={totalTodos}
 			searchValue={searchValue}
