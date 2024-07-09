@@ -5,25 +5,30 @@ import { TodoList } from './Components/TodoList/TodoList';
 import { TodoItem } from './Components/TodoItem/TodoItem';
 import { CreateTodoButton } from './Components/CreateTodoButton/CreateTodoButton';
 
-const defaultTodos = [
-	{ text: 'Analysis of trends', completed: true },
-	{ text: 'Update forecast', completed: false },
-	{
-		text: 'Update performance',
-		completed: false,
-	},
-	{
-		text: 'Send Capacity Plan email',
-		completed: false,
-	},
-	{
-		text: 'Send Capacity Plan by chat',
-		completed: true,
-	},
-];
+function useLocalStorage(itemName, initialValue) {
+	const localStorageItem = localStorage.getItem(itemName);
+
+	let parsedItem;
+
+	if (!localStorageItem) {
+		localStorage.setItem(itemName, JSON.stringify(initialValue));
+		parsedItem = initialValue;
+	} else {
+		parsedItem = JSON.parse(localStorageItem);
+	}
+
+	const [item, setItem] = React.useState(parsedItem);
+
+	const saveItem = (newItem) => {
+		localStorage.setItem(itemName, JSON.stringify(newItem));
+		setItem(newItem);
+	};
+
+	return [item, saveItem];
+}
 
 function App() {
-	const [todos, setTodos] = React.useState(defaultTodos);
+	const [todos, saveTodos] = useLocalStorage('TODOS_V1', []);
 	const [searchValue, setSearchValue] = React.useState('');
 
 	const completedTodos = todos.filter(
@@ -43,7 +48,7 @@ function App() {
 			(todo) => todo.text === text
 		);
 		newTodos[todoIndex].completed = true;
-		setTodos(newTodos);
+		saveTodos(newTodos);
 	};
 
 	const deleteTodo = (text) => {
@@ -52,7 +57,7 @@ function App() {
 			(todo) => todo.text === text
 		);
 		newTodos.splice(todoIndex, 1);
-		setTodos(newTodos);
+		saveTodos(newTodos);
 	};
 
 	return (
