@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/to-do-list-darksideoftheforce/static/css/main.6d7c3a1d.css",
+    "main.css": "/to-do-list-darksideoftheforce/static/css/main.ea14d076.css",
     "main.js": "/to-do-list-darksideoftheforce/static/js/main.be0d9d9f.js",
     "static/media/empire.png": "/to-do-list-darksideoftheforce/static/media/empire.3f3f53318f25de6c4d8d.png",
     "index.html": "/to-do-list-darksideoftheforce/index.html",
     "static/media/delete.svg": "/to-do-list-darksideoftheforce/static/media/delete.3a6a4a169902bb5338d3d5b9f245bcc2.svg",
     "static/media/check.svg": "/to-do-list-darksideoftheforce/static/media/check.69fe40598c99625c3388c7d433ec9d91.svg",
-    "main.6d7c3a1d.css.map": "/to-do-list-darksideoftheforce/static/css/main.6d7c3a1d.css.map",
+    "main.ea14d076.css.map": "/to-do-list-darksideoftheforce/static/css/main.ea14d076.css.map",
     "main.be0d9d9f.js.map": "/to-do-list-darksideoftheforce/static/js/main.be0d9d9f.js.map"
   },
   "entrypoints": [
-    "static/css/main.6d7c3a1d.css",
+    "static/css/main.ea14d076.css",
     "static/js/main.be0d9d9f.js"
   ]
 }
