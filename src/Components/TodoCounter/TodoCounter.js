@@ -1,13 +1,17 @@
+import { TodoContext } from '../TodoContext/TodoContext';
 import './TodoCounter.css';
+import React from 'react';
+import { EmblemIcon } from '../TodoNavIcon/EmblemIcon';
 
-function TodoCounter({ total, completed }) {
-	if (total === 0) {
+function TodoCounter() {
+	const { completedTodos, totalTodos } =
+		React.useContext(TodoContext);
+
+	if (totalTodos === 0) {
 		return (
-			<h1 className="TodoCounter">
-				You don't have pending Tasks.
-			</h1>
+			<h1 className="TodoCounter">You don't have pending Tasks.</h1>
 		);
-	} else if (total === completed) {
+	} else if (totalTodos === completedTodos) {
 		return (
 			<h1 className="TodoCounter">
 				You have completed all of your Tasks.
@@ -15,11 +19,15 @@ function TodoCounter({ total, completed }) {
 		);
 	} else {
 		return (
-			<h1 className="TodoCounter">
-				You have completed{' '}
-				<span>{completed}</span> of{' '}
-				<span>{total}</span> Tasks.
-			</h1>
+			<>
+				<div className='header-container'>
+					<EmblemIcon></EmblemIcon>
+					<h1 className="TodoCounter">
+						You have completed <span>{completedTodos}</span> of{' '}
+						<span>{totalTodos}</span> Tasks.
+					</h1>
+				</div>
+			</>
 		);
 	}
 }
