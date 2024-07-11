@@ -31,7 +31,12 @@ textarea {
 	flex-direction: row;
 	justify-content: space-around;
     padding: 16px;
-    width: 80%;
+    width: 100%;
+}
+
+.TodoForm-button{
+    width: 45%;
+	padding: 10px 0px;
 }
 
 .TodoForm-button--add {
@@ -39,7 +44,6 @@ textarea {
 	border: 2px solid #4caf50;
     box-shadow: 0 5px 5px rgb(7, 247, 87);
 	color: #ffffff;
-	padding: 15px 32px;
 	text-align: center;
 	font-size: 16px;
 	border-radius: 12px;
@@ -56,7 +60,6 @@ textarea {
     border: 2px solid #ff1500;
 	box-shadow: 0 5px 5px rgb(238, 64, 64);
 	color: #ffffff;
-	padding: 15px 32px;
 	text-align: center;
 	font-size: 16px;
 	border-radius: 12px;
