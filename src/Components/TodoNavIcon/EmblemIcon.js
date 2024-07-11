@@ -5,7 +5,7 @@ import icon from './empire.png';
 function EmblemIcon() {
 	return (
 		<div className="icon-container">
-			<img src={icon} />
+			<img alt='EmpireIcon' src={icon} />
 		</div>
 	);
 }
