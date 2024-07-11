@@ -5,7 +5,8 @@ form {
 	flex-direction: column;
 	background-color: black;
 	border-radius: 8px;
-	min-width: 400px;
+	min-width: 150px;
+	max-width: 240px;
 	align-items: center;
 	justify-content: space-between;
     margin: 24px;
